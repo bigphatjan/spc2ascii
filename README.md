@@ -1,8 +1,9 @@
 # spc2ascii
 
-Couldn't find anything online to read this file under Linux without Wine, so here goes...
+Couldn't find anything online to read some UV-vis files under Linux without Wine, so here goes...
 
-Using format specification:
+Many features not supported because I have specific needs - if you need them implemented let me know and I'll extend.
 
-http://labview360.com/forum/forum_uploads/files/authorid3/2005-05-24_163650/spcfileFormat.pdf
-
+Arguments:      <input file>
+Outputs:        ascii table to standard output
+To compile:     gcc main.c -o spc2ascii -lm
