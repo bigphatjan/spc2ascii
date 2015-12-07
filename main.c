@@ -27,12 +27,12 @@ To compile:	gcc main.c -o spc2ascii -lm
 #include "spc.h"
 
 
-uint32_t reverse_words(uint32_t b) {
+int32_t reverse_words(int32_t b) {
 	b = (b & 0xFFFF0000) >> 16 | (b & 0x0000FFFF) << 16;
 	return b;
 }
 
-float raw2float(uint32_t b,float e) {
+float raw2float(int32_t b,float e) {
 	return powf(2,e)*reverse_words(b)/powf(2,32);
 }
 
@@ -105,7 +105,7 @@ int main(int argc, char ** argv)
 		mask >>= 1;
 	}
 
-	uint32_t * data=calloc(hdr.onpts,32);
+	int32_t * data=calloc(hdr.onpts,32);
 	fread(data,32,hdr.onpts,input);
 	fclose(input);
 
